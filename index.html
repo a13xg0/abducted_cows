@@ -12,6 +12,20 @@
                 padding: 0;
             }
 
+            .animation {
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                z-index: 100;
+            }
+
+            .cow {
+                width: 220px;
+                height: 300px;
+                position: absolute;
+                top: 100px;
+                left: 30px;
+            }
             .sky {
                 height: 100vh;
                 position: relative;
@@ -121,6 +135,13 @@
 
     <body>
         <div class="perspective">
+
+            <div class="animation">
+                <div class="cow">
+                    <img src="img/cow_bw_head_open.png" style="position: absolute; top:10px" />
+                    <img src="img/cow_bw_body.png"/>
+                </div>
+            </div>
             <div class="sky">
                 <div class="star star-1"></div>
                 <div class="star star-2"></div>
