@@ -1,13 +1,18 @@
 
 function initialize() {
 
+	const { map, filter } = rxjs.operators;
+
 	const cow1 = document.getElementById('cow1');
 	const oopCow = new Cow(cow1);
 
-	setTimeout(() => {oopCow.blink()}, 1000);
-	setTimeout(() => {oopCow.blink()}, 1500);
-	setTimeout(() => {oopCow.blink()}, 3400);
-	setTimeout(() => {oopCow.blink()}, 5600);
+	rxjs.interval(300)
+		.pipe(
+				filter(() => {
+					return Math.random() > 0.8;
+				})
+			)
+		.subscribe(() => oopCow.blink());
 
 	setTimeout(() => {oopCow.step(1, 100).then(()=>
 		oopCow.step(1, 100).then(()=>{
